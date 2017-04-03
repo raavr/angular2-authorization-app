@@ -1,0 +1,28 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/mixins/breakpoints";
+@import "~bootstrap/scss/variables";
+
+$fa-font-path: "../assets/font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body{
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #fbfbfb;
+}
+
+.clear-fix::after, .clear-fix::before {
+    display: table;
+    clear: both;
+    content: "";
+}
