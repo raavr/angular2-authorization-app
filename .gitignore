@@ -63,3 +63,5 @@ npm-debug.log
 
 # Tmp #
 /tmp/
+/server/
+/.vscode/
