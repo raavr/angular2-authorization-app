@@ -4,6 +4,7 @@ import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
 import { Credentials } from './credentials';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ValidatorsService } from '../utils/validator.service';
 
 @Component({
     selector: "login",
@@ -17,7 +18,7 @@ export class LoginComponent {
 
     ngOnInit() {
         this.credentials = new FormGroup({
-            email: new FormControl('', Validators.required),
+            email: new FormControl('', [Validators.required, ValidatorsService.emailValidator]),
             password: new FormControl('', Validators.required)
         });
     }
