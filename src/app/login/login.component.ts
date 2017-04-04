@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Credentials } from './credentials';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidatorsService } from '../utils/validator.service';
+import { AlertService } from '../alert/alert.service';
 
 @Component({
     selector: "login",
@@ -14,7 +15,7 @@ import { ValidatorsService } from '../utils/validator.service';
 export class LoginComponent {
     credentials: FormGroup;
 
-    constructor(private authService: AuthService, private router: Router) {}
+    constructor(private authService: AuthService, private router: Router, private alertService: AlertService) {}
 
     ngOnInit() {
         this.credentials = new FormGroup({
@@ -26,7 +27,7 @@ export class LoginComponent {
     login({ value, valid }: { value: Credentials, valid: boolean }) {
         this.authService.login(value).subscribe(
             () => this.router.navigate(['/']),
-            data => console.log(data.json().message)
+            data => this.alertService.error(data.json().message)
         );
     }
 }

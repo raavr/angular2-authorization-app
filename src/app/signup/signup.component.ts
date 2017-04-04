@@ -7,6 +7,7 @@ import { ValidatorsService } from '../utils/validator.service';
 import { SignupService } from './signup.service';
 import { User } from './user';
 import { CONFIG } from '../app.constant';
+import { AlertService } from '../alert/alert.service';
 
 @Component({
     selector: "signup",
@@ -16,7 +17,7 @@ import { CONFIG } from '../app.constant';
 export class SignupComponent {
     user: FormGroup;
 
-    constructor(private signupService: SignupService, private router: Router) {}
+    constructor(private signupService: SignupService, private router: Router, private alertService: AlertService) {}
 
     ngOnInit() {
         this.user = new FormGroup({
@@ -35,8 +36,11 @@ export class SignupComponent {
     signup({ value, valid }: { value: User, valid: boolean }) {
         this.signupService.signup(value)
             .subscribe(
-                () => this.router.navigate(['./login']),
-                data => console.log(data.json().message)
+                data => { 
+                    this.router.navigate(['./login']);
+                    this.alertService.success(data.json().message); 
+                },
+                data => this.alertService.error(data.json().message)
             );
     }
 }

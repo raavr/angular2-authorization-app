@@ -16,6 +16,7 @@ import { SignupService } from './signup/signup.service';
 import { HomeComponent } from './home';
 import { NavbarComponent } from './navbar';
 import { AuthModule } from './auth';
+import { AlertModule } from './alert';
 import { ProfileService } from './profile/profile.service';
 import { ProfileComponent } from './profile';
 
@@ -46,6 +47,7 @@ const APP_PROVIDERS = [
     ReactiveFormsModule,
     HttpModule,
     AuthModule,
+    AlertModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
   ],
   providers: [
