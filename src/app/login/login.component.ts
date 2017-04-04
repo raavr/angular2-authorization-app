@@ -10,7 +10,7 @@ import { Credentials } from './credentials';
     styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent {
-    credentials: Credentials;
+    credentials: Credentials = new Credentials();
 
     constructor(private authService: AuthService, private router: Router) {}
 
