@@ -11,9 +11,9 @@ import { Component } from '@angular/core';
       }
   `],
   template: `
-    <section class="no-content">
+    <div class="no-content outlet-container">
       <h1>404: page missing</h1>
-    </section>
+    </div>
   `
 })
 export class NoContentComponent {

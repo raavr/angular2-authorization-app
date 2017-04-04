@@ -9,6 +9,10 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { NoContentComponent } from './no-content';
+import { LoginComponent } from './login';
+import { HomeComponent } from './home';
+import { NavbarComponent } from './navbar';
+import { AuthModule } from './auth';
 
 const APP_SERVICE_PROVIDERS = [
 
@@ -23,12 +27,16 @@ const APP_PROVIDERS = [
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    NoContentComponent
+    NoContentComponent,
+    LoginComponent,
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [ 
     BrowserModule,
     FormsModule,
     HttpModule,
+    AuthModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
   ],
   providers: [

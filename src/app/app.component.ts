@@ -12,6 +12,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   ],
   template: `
     <div>
+      <navbar></navbar>
       <router-outlet></router-outlet>
     </div>
   `
