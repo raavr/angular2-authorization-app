@@ -1,0 +1,56 @@
+<div class="col-md-6 offset-md-3 outlet-container">
+    <h2>Create account</h2>
+    <form (ngSubmit)="signup(user)" [formGroup]="user" novalidate>
+        <div formGroupName="nameGroup">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" formControlName="firstName"/>
+                <div class="help-block" *ngIf="user.get('nameGroup').get('firstName').touched && user.get('nameGroup').get('firstName').hasError('required')">
+                    First name is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" formControlName="lastName"/>
+                <div class="help-block" *ngIf="user.get('nameGroup').get('lastName').touched && user.get('nameGroup').get('lastName').hasError('required')">
+                    Last name is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" formControlName="email"/>
+            <div class="help-block" *ngIf="user.get('email').touched && user.get('email').hasError('required')">
+                Email is required
+            </div>
+            <div class="help-block" *ngIf="user.get('email').touched && user.get('email').hasError('invalid-email') && !user.get('email').hasError('required')">
+                Invalid email
+            </div>
+        </div>
+        <div formGroupName="passwordGroup">
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" formControlName="password"/>
+                <div class="help-block" *ngIf="user.get('passwordGroup').get('password').touched && user.get('passwordGroup').get('password').hasError('required')">
+                    Password is required
+                </div>
+                <div class="help-block" *ngIf="user.get('passwordGroup').get('password').touched && user.get('passwordGroup').get('password').hasError('invalid-password') && !user.get('passwordGroup').get('password').hasError('required')">
+                    Invalid password. Password must be at least 6 characters long, and contain a number
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="passwordConf">Confirm password</label>
+                <input type="password" class="form-control" formControlName="passwordConf"/>
+                <div class="help-block" *ngIf="user.get('passwordGroup').get('passwordConf').touched && user.get('passwordGroup').get('passwordConf').hasError('required')">
+                    Password confirmation is required
+                </div>
+                <div class="help-block" *ngIf="user.get('passwordGroup').get('passwordConf').touched && user.get('passwordGroup').hasError('nomatch-password') && !user.get('passwordGroup').get('passwordConf').hasError('required')">
+                    Passwords must match
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="user.invalid" class="btn btn-primary">Sign Up</button>
+        </div>
+    </form>
+</div>

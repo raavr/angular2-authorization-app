@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { NoContentComponent } from './no-content';
 import { LoginComponent } from './login';
+import { SignupComponent } from './signup';
 import { HomeComponent } from './home';
 import { NavbarComponent } from './navbar';
 import { AuthModule } from './auth';
@@ -30,6 +31,7 @@ const APP_PROVIDERS = [
     AppComponent,
     NoContentComponent,
     LoginComponent,
+    SignupComponent,
     HomeComponent,
     NavbarComponent
   ],
