@@ -12,6 +12,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { NoContentComponent } from './no-content';
 import { LoginComponent } from './login';
 import { SignupComponent } from './signup';
+import { SignupService } from './signup/signup.service';
 import { HomeComponent } from './home';
 import { NavbarComponent } from './navbar';
 import { AuthModule } from './auth';
@@ -19,7 +20,8 @@ import { ProfileService } from './profile/profile.service';
 import { ProfileComponent } from './profile';
 
 const APP_SERVICE_PROVIDERS = [
-  ProfileService
+  ProfileService,
+  SignupService
 ];
 
 const APP_PROVIDERS = [

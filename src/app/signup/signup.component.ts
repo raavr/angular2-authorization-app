@@ -4,6 +4,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { ValidatorsService } from '../utils/validator.service';
+import { SignupService } from './signup.service';
 import { User } from './user';
 import { CONFIG } from '../app.constant';
 
@@ -15,7 +16,7 @@ import { CONFIG } from '../app.constant';
 export class SignupComponent {
     user: FormGroup;
 
-    constructor(private http: Http, private router: Router) {}
+    constructor(private signupService: SignupService, private router: Router) {}
 
     ngOnInit() {
         this.user = new FormGroup({
@@ -32,14 +33,10 @@ export class SignupComponent {
     }
 
     signup({ value, valid }: { value: User, valid: boolean }) {
-            let headers = new Headers({ 'Content-Type': 'application/json' });
-            let options = new RequestOptions({ headers: headers });
-    
-    // this.http
-    //     .put(CONFIG.ENDPOINT + '/auth/signup', JSON.stringify(value), options)
-    //     .subscribe(
-    //         () => this.router.navigate(['home']),
-    //         data => console.log(data.json().message)
-    //     );
+        this.signupService.signup(value)
+            .subscribe(
+                () => this.router.navigate(['./login']),
+                data => console.log(data.json().message)
+            );
     }
 }
