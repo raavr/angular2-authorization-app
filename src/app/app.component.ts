@@ -13,8 +13,10 @@ import { Component, ViewEncapsulation } from '@angular/core';
   template: `
     <div>
       <navbar></navbar>
-      <alert></alert>
-      <router-outlet></router-outlet>
+      <div class="outlet-container">
+        <alert></alert>
+        <router-outlet></router-outlet>
+      </div>
     </div>
   `
 })

@@ -1,8 +1,16 @@
-<div class="outlet-container">
-    <h1>Profile</h1>
-    <button *ngIf="authService.isAdmin()" class="btn" type="button" (click)="getAllProfiles()">Get all users profiles</button>
-    <button class="btn" type="button" (click)="getMyProfile()">Get my profile</button>
-    <ul *ngIf="profiles">
-        <li *ngFor="let profile of profiles">{{profile.name}} {{profile.surname}} - {{profile.email}}</li>
-    </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Profile</h1>
+            <button *ngIf="authService.isAdmin()" class="btn" type="button" (click)="getAllProfiles()">Get all users profiles</button>
+            <button class="btn" type="button" (click)="getMyProfile()">Get my profile</button>
+        </div>
+        <div *ngIf="profiles.length > 0" class="col-md-12">
+            <div class="profiles-list-container">
+                <ul class="profiles-list">
+                    <li *ngFor="let profile of profiles">{{profile.name}} {{profile.surname}} - {{profile.email}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>

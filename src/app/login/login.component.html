@@ -1,25 +1,29 @@
-<div class="col-md-6 offset-md-3 outlet-container">
-    <h2>Login</h2>
-    <form (ngSubmit)="login(credentials)" [formGroup]="credentials" novalidate>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" formControlName="email"/>
-            <div class="help-block" *ngIf="credentials.get('email').touched && credentials.get('email').hasError('required')">
-                Email is required
-            </div>
-            <div class="help-block" *ngIf="credentials.get('email').touched && credentials.get('email').hasError('invalid-email') && !credentials.get('email').hasError('required')">
-                Invalid email
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Login</h2>
+            <form (ngSubmit)="login(credentials)" [formGroup]="credentials" novalidate>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" formControlName="email"/>
+                    <div class="help-block" *ngIf="credentials.get('email').touched && credentials.get('email').hasError('required')">
+                        Email is required
+                    </div>
+                    <div class="help-block" *ngIf="credentials.get('email').touched && credentials.get('email').hasError('invalid-email') && !credentials.get('email').hasError('required')">
+                        Invalid email
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" formControlName="password" />
+                    <div class="help-block" *ngIf="credentials.get('password').touched && credentials.get('password').hasError('required')">
+                        Password is required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button [disabled]="credentials.invalid" class="btn btn-primary">Login</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" formControlName="password" />
-            <div class="help-block" *ngIf="credentials.get('password').touched && credentials.get('password').hasError('required')">
-                Password is required
-            </div>
-        </div>
-        <div class="form-group">
-            <button [disabled]="credentials.invalid" class="btn btn-primary">Login</button>
-        </div>
-    </form>
+    </div>
 </div>
