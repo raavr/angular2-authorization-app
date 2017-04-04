@@ -15,9 +15,11 @@ import { SignupComponent } from './signup';
 import { HomeComponent } from './home';
 import { NavbarComponent } from './navbar';
 import { AuthModule } from './auth';
+import { ProfileService } from './profile/profile.service';
+import { ProfileComponent } from './profile';
 
 const APP_SERVICE_PROVIDERS = [
-
+  ProfileService
 ];
 
 const APP_PROVIDERS = [
@@ -33,7 +35,8 @@ const APP_PROVIDERS = [
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProfileComponent
   ],
   imports: [ 
     BrowserModule,

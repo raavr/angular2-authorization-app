@@ -1,0 +1,8 @@
+<div class="outlet-container">
+    <h1>Profile</h1>
+    <button *ngIf="authService.isAdmin()" class="btn" type="button" (click)="getAllProfiles()">Get all users profiles</button>
+    <button class="btn" type="button" (click)="getMyProfile()">Get my profile</button>
+    <ul *ngIf="profiles">
+        <li *ngFor="let profile of profiles">{{profile.name}} {{profile.surname}} - {{profile.email}}</li>
+    </ul>
+</div>

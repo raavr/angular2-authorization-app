@@ -25,7 +25,7 @@ export class LoginComponent {
 
     login({ value, valid }: { value: Credentials, valid: boolean }) {
         this.authService.login(value).subscribe(
-            () => this.router.navigate(['home']),
+            () => this.router.navigate(['/']),
             data => console.log(data.json().message)
         );
     }

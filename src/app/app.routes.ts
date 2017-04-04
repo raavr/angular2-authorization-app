@@ -3,11 +3,13 @@ import { NoContentComponent } from './no-content';
 import { LoginComponent } from './login';
 import { SignupComponent } from './signup';
 import { HomeComponent } from './home';
+import { ProfileComponent } from './profile';
 import { AuthGuardService } from './auth/auth-guard.service';
 
 export const ROUTES: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'home', component: HomeComponent, canActivate: [ AuthGuardService ]},
-  { path: '**',    component: NoContentComponent }
+  { path: 'profile', component: ProfileComponent, canActivate: [ AuthGuardService ]},
+  { path: '**', component: NoContentComponent }
 ];
