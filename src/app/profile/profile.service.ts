@@ -13,7 +13,7 @@ export class ProfileService {
   }
 
   getMyProfile() {
-      return this.authHttp.get(CONFIG.ENDPOINT + "/api/admin/emails");
+      return this.authHttp.get(CONFIG.ENDPOINT + "/api/me");
   }
 
 }

@@ -23,7 +23,7 @@ export class ProfileComponent {
 
    getMyProfile() {
        this.profileService.getMyProfile().subscribe(
-           data => this.profiles = data.json().emails,
+           data => this.profiles = data.json().users,
            err => console.log(err.json().message)
         );
    }
