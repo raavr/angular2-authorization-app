@@ -1,4 +1,4 @@
-# Angular 2 and Webpack
+# Angular 2 sample authorization app with user's roles
 
 An application using:
 * [Angular] (http://www.angular.io/)
@@ -8,9 +8,6 @@ An application using:
 * [TypeScript] (https://www.typescriptlang.org/)
 * [Webpack] (https://webpack.github.io/)
 * [npm] (https://www.npmjs.com/)
-
-And for testing:
-* [Karma] (https://karma-runner.github.io/)
-* [Jasmine] (http://jasmine.github.io/)
+* [angular2-jwt] (https://github.com/auth0/angular2-jwt)
 
 Environment configuration by [@AngularClass](https://github.com/AngularClass/angular2-webpack-starter)
