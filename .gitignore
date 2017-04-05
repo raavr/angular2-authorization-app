@@ -63,5 +63,5 @@ npm-debug.log
 
 # Tmp #
 /tmp/
-/server/
+/server/config.pyc
 /.vscode/
