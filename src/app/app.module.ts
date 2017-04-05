@@ -15,6 +15,7 @@ import { SignupComponent } from './signup';
 import { SignupService } from './signup/signup.service';
 import { HomeComponent } from './home';
 import { NavbarComponent } from './navbar';
+import { CollapseNavbarDirective } from './navbar';
 import { AuthModule } from './auth';
 import { AlertModule } from './alert';
 import { ProfileService } from './profile/profile.service';
@@ -39,6 +40,7 @@ const APP_PROVIDERS = [
     SignupComponent,
     HomeComponent,
     NavbarComponent,
+    CollapseNavbarDirective,
     ProfileComponent
   ],
   imports: [ 

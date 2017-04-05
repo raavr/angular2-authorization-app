@@ -16,7 +16,6 @@ import '@angular/router';
 
 import 'jquery';
 import 'bootstrap/js/dist/collapse';
-import 'bootstrap/js/dist/modal';
 import 'bootstrap/js/dist/alert';
 
 // AngularClass
