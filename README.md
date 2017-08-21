@@ -1,6 +1,6 @@
 # Angular 2 sample authorization app with user's roles
 
-An application using:
+This app is built with:
 * [Angular] (http://www.angular.io/)
 * [Bootstrap v4] (https://v4-alpha.getbootstrap.com/)
 * [Sass] (http://sass-lang.com/)
