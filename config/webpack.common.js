@@ -234,9 +234,6 @@ module.exports = function (options) {
        * See: https://www.npmjs.com/package/copy-webpack-plugin
        */
       new CopyWebpackPlugin([
-        { from: 'src/assets', to: 'assets' },
-        { from: 'src/meta'},
-        { from: 'node_modules/font-awesome/fonts', to: 'assets/font-awesome/fonts' }
       ]),
 
 
