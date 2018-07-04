@@ -9,34 +9,34 @@ import { AlertService } from '../alert/alert.service';
 import { Subject } from 'rxjs';
 
 @Component({
-    selector: "login",
-    templateUrl: "./login.component.html",
-    styleUrls: ["./login.component.scss"]
+  selector: "login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit, OnDestroy {
-    credentials: FormGroup;
-    unsub$ = new Subject<any>();
+  credentials: FormGroup;
+  unsub$ = new Subject<any>();
 
-    constructor(private authService: AuthService, private router: Router, private alertService: AlertService) { }
+  constructor(private authService: AuthService, private router: Router, private alertService: AlertService) { }
 
-    ngOnInit() {
-        this.credentials = new FormGroup({
-            email: new FormControl('', [Validators.required, ValidatorsService.emailValidator]),
-            password: new FormControl('', Validators.required)
-        });
-    }
+  ngOnInit() {
+    this.credentials = new FormGroup({
+      email: new FormControl('', [Validators.required, ValidatorsService.emailValidator]),
+      password: new FormControl('', Validators.required)
+    });
+  }
 
-    login({ value, valid }: { value: Credentials, valid: boolean }) {
-        this.authService.login(value)
-            .takeUntil(this.unsub$)
-            .subscribe(
-                () => this.router.navigate(['/']),
-                data => this.alertService.error(data.json().message)
-            );
-    }
+  login({ value, valid }: { value: Credentials, valid: boolean }) {
+    this.authService.login(value)
+      .takeUntil(this.unsub$)
+      .subscribe(
+        () => this.router.navigate(['/']),
+        data => this.alertService.error(data.json().message)
+      );
+  }
 
-    ngOnDestroy() {
-        this.unsub$.next();
-        this.unsub$.complete();
-    }
+  ngOnDestroy() {
+    this.unsub$.next();
+    this.unsub$.complete();
+  }
 }

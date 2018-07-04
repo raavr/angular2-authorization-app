@@ -11,19 +11,19 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
 }
 
 @NgModule({
-    imports: [ 
-        CommonModule,
-        HttpModule
-    ],
-    providers: [
-        AuthService, 
-        AuthGuardService,
-        {
-            provide: AuthHttp,
-            useFactory: authHttpServiceFactory,
-            deps: [Http, RequestOptions]
-        }
-    ]
+  imports: [
+    CommonModule,
+    HttpModule
+  ],
+  providers: [
+    AuthService,
+    AuthGuardService,
+    {
+      provide: AuthHttp,
+      useFactory: authHttpServiceFactory,
+      deps: [Http, RequestOptions]
+    }
+  ]
 })
 export class AuthModule {
 
