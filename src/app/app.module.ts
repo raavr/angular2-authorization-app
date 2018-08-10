@@ -50,7 +50,12 @@ const APP_PROVIDERS = [
     HttpModule,
     AuthModule,
     AlertModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(ROUTES, 
+      { 
+        useHash: true, 
+        preloadingStrategy: PreloadAllModules 
+      }
+    ),
   ],
   providers: [
     ENV_PROVIDERS,

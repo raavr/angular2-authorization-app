@@ -11,7 +11,10 @@ import { Subject } from 'rxjs';
 export class NavbarComponent implements OnDestroy {
   unsub$ = new Subject<any>();
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    private authService: AuthService, 
+    private router: Router
+  ) { }
 
   logout() {
     this.authService.logout()

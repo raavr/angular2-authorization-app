@@ -2,7 +2,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { 
+  FormControl, 
+  FormGroup, 
+  Validators, 
+  AbstractControl 
+} from '@angular/forms';
 import { ValidatorsService } from '../utils/validator.service';
 import { SignupService } from './signup.service';
 import { User } from './user';
@@ -18,7 +23,11 @@ export class SignupComponent implements OnInit, OnDestroy {
   user: FormGroup;
   unsub$ = new Subject<any>();
 
-  constructor(private signupService: SignupService, private router: Router, private alertService: AlertService) { }
+  constructor(
+    private signupService: SignupService, 
+    private router: Router, 
+    private alertService: AlertService
+  ) { }
 
   ngOnInit() {
     this.user = new FormGroup({

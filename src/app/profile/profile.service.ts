@@ -6,14 +6,14 @@ import { CONFIG } from '../app.constant';
 @Injectable()
 export class ProfileService {
 
-  constructor(private authHttp: AuthHttp) {}
+  constructor(private authHttp: AuthHttp) { }
 
   getAllProfiles() {
-       return this.authHttp.get(CONFIG.ENDPOINT + "/api/admin/users");
+    return this.authHttp.get(`${CONFIG.ENDPOINT}/api/admin/users`);
   }
 
   getMyProfile() {
-      return this.authHttp.get(CONFIG.ENDPOINT + "/api/me");
+    return this.authHttp.get(`${CONFIG.ENDPOINT}/api/me`);
   }
 
 }
