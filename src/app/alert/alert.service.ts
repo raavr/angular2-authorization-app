@@ -3,26 +3,36 @@ import { Router, NavigationStart } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/Subject';
 import { CONFIG } from '../app.constant';
+import { MessageType, Message } from './alert';
 
 @Injectable()
 export class AlertService {
   private subject = new Subject<any>();
 
-  private hide() {
-    Observable.of(null).delay(CONFIG.DISPLAY_TIME).subscribe(() => this.subject.next());
+  private showAndAutoHideAlert(message: Message) {
+    Observable.of(null)
+      .delay(CONFIG.DISPLAY_TIME)
+      .startWith(message)
+      .subscribe(
+        (message) => this.subject.next(message)
+      );
   }
 
   success(message: string) {
-    this.subject.next({ type: 'success', text: message });
-    this.hide();
+    this.showAndAutoHideAlert({ 
+      type: MessageType.SUCCESS, 
+      text: message 
+    });
   }
 
   error(message: string) {
-    this.subject.next({ type: 'error', text: message });
-    this.hide();
+    this.showAndAutoHideAlert({ 
+      type: MessageType.ERROR,
+      text: message 
+    });
   }
 
-  getMessage(): Observable<any> {
+  getMessage(): Observable<Message | null> {
     return this.subject.asObservable();
   }
 }
