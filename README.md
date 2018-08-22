@@ -1,5 +1,9 @@
 # Angular 2 sample authorization app with user's roles
 
+## Demo
+
+![Demo 1][1]
+
 This app is built with:
 * [Angular] (http://www.angular.io/)
 * [Bootstrap v4] (https://v4-alpha.getbootstrap.com/)
@@ -11,3 +15,5 @@ This app is built with:
 * [angular2-jwt] (https://github.com/auth0/angular2-jwt)
 
 Environment configuration by [@AngularClass](https://github.com/AngularClass/angular2-webpack-starter)
+
+[1]: ./demo/demo.gif
